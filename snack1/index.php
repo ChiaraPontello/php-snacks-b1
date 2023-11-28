@@ -2,6 +2,7 @@
 Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni partita avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema:
 Olimpia Milano - Cantù | 55-60-->
 
+
 <?php
      $matches = [
                 [
@@ -35,13 +36,6 @@ Olimpia Milano - Cantù | 55-60-->
                     'point_two' => 113
                 ],
             ]; 
-            
-            foreach ($matches as $game){
-                echo   "<ul>
-                        <li>  {$game['team_one']}  - {$game['team_two']} | {$game['point_one']} - {$game['point_two']} </li>
-                        </ul>";
-            }
-
         ?>
     
 <!DOCTYPE html>
@@ -53,6 +47,19 @@ Olimpia Milano - Cantù | 55-60-->
     <title>PHP snack</title>
 </head>
 <body>
-    
+    <ul>
+        <?php
+            foreach ($matches as $game) {
+        ?>
+        <ul>
+            <li>
+                <?php  echo $game['team_one'] . ' - ' . $game['team_two'] . ' | ' . $game['point_one'] . '-' . $game['point_two'];
+                ?>
+            </li>
+        </ul>
+        <?php
+            }
+        ?>
+   
 </body>
 </html>
